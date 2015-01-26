@@ -1,20 +1,16 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
     <modelVersion>4.0.0</modelVersion>
-    <groupId>com.springapp</groupId>
-    <artifactId>untitledMVC2</artifactId>
+    <groupId>pl.golomp.restserver</groupId>
+    <artifactId>GolompServer</artifactId>
     <packaging>war</packaging>
     <version>1.0-SNAPSHOT</version>
-    <name>untitledMVC2</name>
+    <name>GolompServer</name>
 
     <properties>
         <spring.version>4.1.4.RELEASE</spring.version>
         <jackson.version>2.4.1</jackson.version>
     </properties>
-    <!--<properties>-->
-        <!--<spring.version>3.2.13.RELEASE</spring.version>-->
-        <!--<jackson.version>1.9.7</jackson.version>-->
-    <!--</properties>-->
 
     <dependencies>
         <dependency>
@@ -68,17 +64,6 @@
             <scope>test</scope>
         </dependency>
 
-        <!--<dependency>-->
-            <!--<groupId>org.codehaus.jackson</groupId>-->
-            <!--<artifactId>jackson-jaxrs</artifactId>-->
-            <!--<version>1.9.7</version>-->
-        <!--</dependency>-->
-
-        <!--<dependency>-->
-            <!--<groupId>org.codehaus.jackson</groupId>-->
-            <!--<artifactId>jackson-annotations</artifactId>-->
-            <!--<version>${jackson.version}</version>-->
-        <!--</dependency>-->
         <dependency>
             <groupId>com.fasterxml.jackson.core</groupId>
             <artifactId>jackson-core</artifactId>
@@ -94,10 +79,37 @@
             <artifactId>jackson-annotations</artifactId>
             <version>${jackson.version}</version>
         </dependency>
+
+        <!-- Postgres -->
+        <dependency>
+            <groupId>org.postgresql</groupId>
+            <artifactId>postgresql</artifactId>
+            <version>9.3-1100-jdbc41</version>
+        </dependency>
+
+        <!-- Hibernate -->
+        <dependency>
+            <groupId>org.hibernate.javax.persistence</groupId>
+            <artifactId>hibernate-jpa-2.1-api</artifactId>
+            <version>1.0.0.Final</version>
+        </dependency>
+        <dependency>
+            <groupId>org.hibernate</groupId>
+            <artifactId>hibernate-core</artifactId>
+            <version>4.3.8.Final</version>
+        </dependency>
+        <dependency>
+            <groupId>org.hibernate</groupId>
+            <artifactId>hibernate-entitymanager</artifactId>
+            <version>4.3.8.Final</version>
+        </dependency>
+
+
+
     </dependencies>
 
     <build>
-        <finalName>untitledMVC2</finalName>
+        <finalName>GolompServer</finalName>
         <plugins>
             <plugin>
                 <artifactId>maven-compiler-plugin</artifactId>

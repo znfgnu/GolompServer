@@ -1,0 +1,218 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="module_untitledmvc2" default="compile.module.untitledmvc2">
+  <dirname property="module.untitledmvc2.basedir" file="${ant.file.module_untitledmvc2}"/>
+  
+  <property name="module.jdk.home.untitledmvc2" value="${project.jdk.home}"/>
+  <property name="module.jdk.bin.untitledmvc2" value="${project.jdk.bin}"/>
+  <property name="module.jdk.classpath.untitledmvc2" value="${project.jdk.classpath}"/>
+  
+  <property name="compiler.args.untitledmvc2" value="-encoding UTF-8 -source 1.6 -target 1.6 ${compiler.args}"/>
+  
+  <property name="untitledmvc2.output.dir" value="${module.untitledmvc2.basedir}/target/classes"/>
+  <property name="untitledmvc2.testoutput.dir" value="${module.untitledmvc2.basedir}/target/test-classes"/>
+  
+  <path id="untitledmvc2.module.bootclasspath">
+    <!-- Paths to be included in compilation bootclasspath -->
+  </path>
+  
+  <path id="untitledmvc2.module.production.classpath">
+    <path refid="${module.jdk.classpath.untitledmvc2}"/>
+    <path refid="library.maven:_org.springframework:spring-core:4.1.4.release.classpath"/>
+    <path refid="library.maven:_commons-logging:commons-logging:1.2.classpath"/>
+    <path refid="library.maven:_javax.servlet:servlet-api:2.5.classpath"/>
+    <path refid="library.maven:_javax.servlet.jsp:jsp-api:2.1.classpath"/>
+    <path refid="library.maven:_org.springframework:spring-webmvc:4.1.4.release.classpath"/>
+    <path refid="library.maven:_org.springframework:spring-beans:4.1.4.release.classpath"/>
+    <path refid="library.maven:_org.springframework:spring-expression:4.1.4.release.classpath"/>
+    <path refid="library.maven:_org.springframework:spring-web:4.1.4.release.classpath"/>
+    <path refid="library.maven:_org.springframework:spring-context:4.1.4.release.classpath"/>
+    <path refid="library.maven:_org.springframework:spring-aop:4.1.4.release.classpath"/>
+    <path refid="library.maven:_aopalliance:aopalliance:1.0.classpath"/>
+    <path refid="library.maven:_com.fasterxml.jackson.core:jackson-core:2.4.1.classpath"/>
+    <path refid="library.maven:_com.fasterxml.jackson.core:jackson-databind:2.4.1.classpath"/>
+    <path refid="library.maven:_com.fasterxml.jackson.core:jackson-annotations:2.4.1.classpath"/>
+    <path refid="library.maven:_org.postgresql:postgresql:9.3-1100-jdbc41.classpath"/>
+    <path refid="library.maven:_org.hibernate.javax.persistence:hibernate-jpa-2.1-api:1.0.0.final.classpath"/>
+    <path refid="library.maven:_org.hibernate:hibernate-core:4.3.8.final.classpath"/>
+    <path refid="library.maven:_org.jboss.logging:jboss-logging:3.1.3.ga.classpath"/>
+    <path refid="library.maven:_org.jboss.logging:jboss-logging-annotations:1.2.0.beta1.classpath"/>
+    <path refid="library.maven:_org.jboss.spec.javax.transaction:jboss-transaction-api_1.2_spec:1.0.0.final.classpath"/>
+    <path refid="library.maven:_dom4j:dom4j:1.6.1.classpath"/>
+    <path refid="library.maven:_xml-apis:xml-apis:1.0.b2.classpath"/>
+    <path refid="library.maven:_org.hibernate.common:hibernate-commons-annotations:4.0.5.final.classpath"/>
+    <path refid="library.maven:_org.javassist:javassist:3.18.1-ga.classpath"/>
+    <path refid="library.maven:_antlr:antlr:2.7.7.classpath"/>
+    <path refid="library.maven:_org.jboss:jandex:1.1.0.final.classpath"/>
+    <path refid="library.maven:_org.hibernate:hibernate-entitymanager:4.3.8.final.classpath"/>
+  </path>
+  
+  <path id="untitledmvc2.runtime.production.module.classpath">
+    <pathelement location="${untitledmvc2.output.dir}"/>
+    <path refid="library.maven:_org.springframework:spring-core:4.1.4.release.classpath"/>
+    <path refid="library.maven:_commons-logging:commons-logging:1.2.classpath"/>
+    <path refid="library.maven:_javax.servlet:servlet-api:2.5.classpath"/>
+    <path refid="library.maven:_org.springframework:spring-webmvc:4.1.4.release.classpath"/>
+    <path refid="library.maven:_org.springframework:spring-beans:4.1.4.release.classpath"/>
+    <path refid="library.maven:_org.springframework:spring-expression:4.1.4.release.classpath"/>
+    <path refid="library.maven:_org.springframework:spring-web:4.1.4.release.classpath"/>
+    <path refid="library.maven:_org.springframework:spring-context:4.1.4.release.classpath"/>
+    <path refid="library.maven:_org.springframework:spring-aop:4.1.4.release.classpath"/>
+    <path refid="library.maven:_aopalliance:aopalliance:1.0.classpath"/>
+    <path refid="library.maven:_com.fasterxml.jackson.core:jackson-core:2.4.1.classpath"/>
+    <path refid="library.maven:_com.fasterxml.jackson.core:jackson-databind:2.4.1.classpath"/>
+    <path refid="library.maven:_com.fasterxml.jackson.core:jackson-annotations:2.4.1.classpath"/>
+    <path refid="library.maven:_org.postgresql:postgresql:9.3-1100-jdbc41.classpath"/>
+    <path refid="library.maven:_org.hibernate.javax.persistence:hibernate-jpa-2.1-api:1.0.0.final.classpath"/>
+    <path refid="library.maven:_org.hibernate:hibernate-core:4.3.8.final.classpath"/>
+    <path refid="library.maven:_org.jboss.logging:jboss-logging:3.1.3.ga.classpath"/>
+    <path refid="library.maven:_org.jboss.logging:jboss-logging-annotations:1.2.0.beta1.classpath"/>
+    <path refid="library.maven:_org.jboss.spec.javax.transaction:jboss-transaction-api_1.2_spec:1.0.0.final.classpath"/>
+    <path refid="library.maven:_dom4j:dom4j:1.6.1.classpath"/>
+    <path refid="library.maven:_xml-apis:xml-apis:1.0.b2.classpath"/>
+    <path refid="library.maven:_org.hibernate.common:hibernate-commons-annotations:4.0.5.final.classpath"/>
+    <path refid="library.maven:_org.javassist:javassist:3.18.1-ga.classpath"/>
+    <path refid="library.maven:_antlr:antlr:2.7.7.classpath"/>
+    <path refid="library.maven:_org.jboss:jandex:1.1.0.final.classpath"/>
+    <path refid="library.maven:_org.hibernate:hibernate-entitymanager:4.3.8.final.classpath"/>
+  </path>
+  
+  <path id="untitledmvc2.module.classpath">
+    <path refid="${module.jdk.classpath.untitledmvc2}"/>
+    <pathelement location="${untitledmvc2.output.dir}"/>
+    <path refid="library.maven:_org.springframework:spring-core:4.1.4.release.classpath"/>
+    <path refid="library.maven:_commons-logging:commons-logging:1.2.classpath"/>
+    <path refid="library.maven:_javax.servlet:servlet-api:2.5.classpath"/>
+    <path refid="library.maven:_javax.servlet.jsp:jsp-api:2.1.classpath"/>
+    <path refid="library.maven:_org.springframework:spring-webmvc:4.1.4.release.classpath"/>
+    <path refid="library.maven:_org.springframework:spring-beans:4.1.4.release.classpath"/>
+    <path refid="library.maven:_org.springframework:spring-expression:4.1.4.release.classpath"/>
+    <path refid="library.maven:_org.springframework:spring-web:4.1.4.release.classpath"/>
+    <path refid="library.maven:_org.springframework:spring-context:4.1.4.release.classpath"/>
+    <path refid="library.maven:_org.springframework:spring-aop:4.1.4.release.classpath"/>
+    <path refid="library.maven:_aopalliance:aopalliance:1.0.classpath"/>
+    <path refid="library.maven:_org.springframework:spring-test:4.1.4.release.classpath"/>
+    <path refid="library.maven:_junit:junit:4.11.classpath"/>
+    <path refid="library.maven:_org.hamcrest:hamcrest-core:1.3.classpath"/>
+    <path refid="library.maven:_com.fasterxml.jackson.core:jackson-core:2.4.1.classpath"/>
+    <path refid="library.maven:_com.fasterxml.jackson.core:jackson-databind:2.4.1.classpath"/>
+    <path refid="library.maven:_com.fasterxml.jackson.core:jackson-annotations:2.4.1.classpath"/>
+    <path refid="library.maven:_org.postgresql:postgresql:9.3-1100-jdbc41.classpath"/>
+    <path refid="library.maven:_org.hibernate.javax.persistence:hibernate-jpa-2.1-api:1.0.0.final.classpath"/>
+    <path refid="library.maven:_org.hibernate:hibernate-core:4.3.8.final.classpath"/>
+    <path refid="library.maven:_org.jboss.logging:jboss-logging:3.1.3.ga.classpath"/>
+    <path refid="library.maven:_org.jboss.logging:jboss-logging-annotations:1.2.0.beta1.classpath"/>
+    <path refid="library.maven:_org.jboss.spec.javax.transaction:jboss-transaction-api_1.2_spec:1.0.0.final.classpath"/>
+    <path refid="library.maven:_dom4j:dom4j:1.6.1.classpath"/>
+    <path refid="library.maven:_xml-apis:xml-apis:1.0.b2.classpath"/>
+    <path refid="library.maven:_org.hibernate.common:hibernate-commons-annotations:4.0.5.final.classpath"/>
+    <path refid="library.maven:_org.javassist:javassist:3.18.1-ga.classpath"/>
+    <path refid="library.maven:_antlr:antlr:2.7.7.classpath"/>
+    <path refid="library.maven:_org.jboss:jandex:1.1.0.final.classpath"/>
+    <path refid="library.maven:_org.hibernate:hibernate-entitymanager:4.3.8.final.classpath"/>
+  </path>
+  
+  <path id="untitledmvc2.runtime.module.classpath">
+    <pathelement location="${untitledmvc2.testoutput.dir}"/>
+    <pathelement location="${untitledmvc2.output.dir}"/>
+    <path refid="library.maven:_org.springframework:spring-core:4.1.4.release.classpath"/>
+    <path refid="library.maven:_commons-logging:commons-logging:1.2.classpath"/>
+    <path refid="library.maven:_javax.servlet:servlet-api:2.5.classpath"/>
+    <path refid="library.maven:_javax.servlet.jsp:jsp-api:2.1.classpath"/>
+    <path refid="library.maven:_org.springframework:spring-webmvc:4.1.4.release.classpath"/>
+    <path refid="library.maven:_org.springframework:spring-beans:4.1.4.release.classpath"/>
+    <path refid="library.maven:_org.springframework:spring-expression:4.1.4.release.classpath"/>
+    <path refid="library.maven:_org.springframework:spring-web:4.1.4.release.classpath"/>
+    <path refid="library.maven:_org.springframework:spring-context:4.1.4.release.classpath"/>
+    <path refid="library.maven:_org.springframework:spring-aop:4.1.4.release.classpath"/>
+    <path refid="library.maven:_aopalliance:aopalliance:1.0.classpath"/>
+    <path refid="library.maven:_org.springframework:spring-test:4.1.4.release.classpath"/>
+    <path refid="library.maven:_junit:junit:4.11.classpath"/>
+    <path refid="library.maven:_org.hamcrest:hamcrest-core:1.3.classpath"/>
+    <path refid="library.maven:_com.fasterxml.jackson.core:jackson-core:2.4.1.classpath"/>
+    <path refid="library.maven:_com.fasterxml.jackson.core:jackson-databind:2.4.1.classpath"/>
+    <path refid="library.maven:_com.fasterxml.jackson.core:jackson-annotations:2.4.1.classpath"/>
+    <path refid="library.maven:_org.postgresql:postgresql:9.3-1100-jdbc41.classpath"/>
+    <path refid="library.maven:_org.hibernate.javax.persistence:hibernate-jpa-2.1-api:1.0.0.final.classpath"/>
+    <path refid="library.maven:_org.hibernate:hibernate-core:4.3.8.final.classpath"/>
+    <path refid="library.maven:_org.jboss.logging:jboss-logging:3.1.3.ga.classpath"/>
+    <path refid="library.maven:_org.jboss.logging:jboss-logging-annotations:1.2.0.beta1.classpath"/>
+    <path refid="library.maven:_org.jboss.spec.javax.transaction:jboss-transaction-api_1.2_spec:1.0.0.final.classpath"/>
+    <path refid="library.maven:_dom4j:dom4j:1.6.1.classpath"/>
+    <path refid="library.maven:_xml-apis:xml-apis:1.0.b2.classpath"/>
+    <path refid="library.maven:_org.hibernate.common:hibernate-commons-annotations:4.0.5.final.classpath"/>
+    <path refid="library.maven:_org.javassist:javassist:3.18.1-ga.classpath"/>
+    <path refid="library.maven:_antlr:antlr:2.7.7.classpath"/>
+    <path refid="library.maven:_org.jboss:jandex:1.1.0.final.classpath"/>
+    <path refid="library.maven:_org.hibernate:hibernate-entitymanager:4.3.8.final.classpath"/>
+  </path>
+  
+  
+  <patternset id="excluded.from.module.untitledmvc2">
+    <patternset refid="ignored.files"/>
+  </patternset>
+  
+  <patternset id="excluded.from.compilation.untitledmvc2">
+    <patternset refid="excluded.from.module.untitledmvc2"/>
+  </patternset>
+  
+  <path id="untitledmvc2.module.sourcepath">
+    <dirset dir="${module.untitledmvc2.basedir}">
+      <include name="src/main/java"/>
+      <include name="src/main/resources"/>
+    </dirset>
+  </path>
+  
+  <path id="untitledmvc2.module.test.sourcepath">
+    <dirset dir="${module.untitledmvc2.basedir}">
+      <include name="src/test/java"/>
+    </dirset>
+  </path>
+  
+  
+  <target name="compile.module.untitledmvc2" depends="compile.module.untitledmvc2.production,compile.module.untitledmvc2.tests" description="Compile module untitledMVC2"/>
+  
+  <target name="compile.module.untitledmvc2.production" depends="register.custom.compilers" description="Compile module untitledMVC2; production classes">
+    <mkdir dir="${untitledmvc2.output.dir}"/>
+    <javac2 destdir="${untitledmvc2.output.dir}" debug="${compiler.debug}" nowarn="${compiler.generate.no.warnings}" memorymaximumsize="${compiler.max.memory}" fork="true" executable="${module.jdk.bin.untitledmvc2}/javac">
+      <compilerarg line="${compiler.args.untitledmvc2}"/>
+      <bootclasspath refid="untitledmvc2.module.bootclasspath"/>
+      <classpath refid="untitledmvc2.module.production.classpath"/>
+      <src refid="untitledmvc2.module.sourcepath"/>
+      <patternset refid="excluded.from.compilation.untitledmvc2"/>
+    </javac2>
+    
+    <copy todir="${untitledmvc2.output.dir}">
+      <fileset dir="${module.untitledmvc2.basedir}/src/main/java">
+        <patternset refid="compiler.resources"/>
+        <type type="file"/>
+      </fileset>
+      <fileset dir="${module.untitledmvc2.basedir}/src/main/resources">
+        <patternset refid="compiler.resources"/>
+        <type type="file"/>
+      </fileset>
+    </copy>
+  </target>
+  
+  <target name="compile.module.untitledmvc2.tests" depends="register.custom.compilers,compile.module.untitledmvc2.production" description="compile module untitledMVC2; test classes" unless="skip.tests">
+    <mkdir dir="${untitledmvc2.testoutput.dir}"/>
+    <javac2 destdir="${untitledmvc2.testoutput.dir}" debug="${compiler.debug}" nowarn="${compiler.generate.no.warnings}" memorymaximumsize="${compiler.max.memory}" fork="true" executable="${module.jdk.bin.untitledmvc2}/javac">
+      <compilerarg line="${compiler.args.untitledmvc2}"/>
+      <bootclasspath refid="untitledmvc2.module.bootclasspath"/>
+      <classpath refid="untitledmvc2.module.classpath"/>
+      <src refid="untitledmvc2.module.test.sourcepath"/>
+      <patternset refid="excluded.from.compilation.untitledmvc2"/>
+    </javac2>
+    
+    <copy todir="${untitledmvc2.testoutput.dir}">
+      <fileset dir="${module.untitledmvc2.basedir}/src/test/java">
+        <patternset refid="compiler.resources"/>
+        <type type="file"/>
+      </fileset>
+    </copy>
+  </target>
+  
+  <target name="clean.module.untitledmvc2" description="cleanup module">
+    <delete dir="${untitledmvc2.output.dir}"/>
+    <delete dir="${untitledmvc2.testoutput.dir}"/>
+  </target>
+</project>

@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-configuration PUBLIC
+        "-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+        "http://hibernate.sourceforge.net/hibernate-configuration-3.0.dtd">
+<hibernate-configuration>
+    <session-factory>
+
+        <property name="connection.url">jdbc:postgresql://127.0.0.1:5432/golomptestdb</property>
+        <property name="connection.username">***</property>
+        <property name="connection.password">***</property>
+        <property name="connection.driver_class">org.postgresql.Driver</property>
+        <property name="dialect">org.hibernate.dialect.PostgreSQL9Dialect</property>
+
+        <property name="show_sql">true</property>
+
+        <property name="format_sql">true</property>
+        <property name="hbm2ddl.auto">update</property>
+        <!--<property name="hbm2ddl.auto">create-drop</property>-->
+
+        <!-- JDBC connection pool (use the built-in) -->
+        <property name="connection.pool_size">1</property>
+        <property name="current_session_context_class">thread</property>
+
+        <property name="hibernate.temp.use_jdbc_metadata_defaults">false</property>
+
+        <mapping class="pl.golomp.restserver.entities.Encja" />
+        <mapping class="pl.golomp.restserver.entities.GUser" />
+        <mapping class="pl.golomp.restserver.entities.GToken" />
+        <mapping class="pl.golomp.restserver.entities.GMessage" />
+        <!--<mapping class="com.mastertheboss.domain.Department" />-->
+
+        <!-- <mapping resource="com/mkyong/user/DBUser.hbm.xml"></mapping> -->
+    </session-factory>
+</hibernate-configuration>
